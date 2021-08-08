@@ -1,0 +1,14 @@
+/* 不能被选中 */
+
+img,
+label,
+.top,
+.image,
+.detailBlock{
+	user-select: none;
+}
+
+.detailBlock_path,
+.detailBlock_filename{
+	user-select: text;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="all" id="all">
+			<!-- 头部 -->
+			<div class="top">
+				<input type="number" v-on:keyup="setCSS" value="15" />
+				<button type="button" @click="changeName(1)">改名</button>
+				<button type="button" @click="changeName(2)">全部改名</button>
+			</div>
+			<!-- 内容容器 -->
+			<div class="contain">
+				<!-- 左边目录 -->
+				<div class="dir" v-bind:style="'width:'+dirWidth+'%;'">
+					<!-- 当前路径下的所有图片 -->
+					<div class="dir_now">
+						<label class="dir_now_title">D:/照片/动漫图/</label>
+						<label class="dir_now_list" v-for="(item,index) in imgArr" @click="goto(item,index)">{{item.filename}}</label>
+					</div>
+					<!-- 保存路径下的所有图片 -->
+					<div class="dir_save">
+						<label v-for="(item,index) in tag" @click="setTag(item)">{{item}}</label>
+					</div>
+				</div>
+				<!-- 主干部分 -->
+				<div class="trunk">
+					<!-- 图片展示区域 -->
+					<div class="image" id="img">
+						<div class="image_icon" @click="before()">
+							<img src="../image/左.png">
+						</div>
+						<div class="image_img">
+							<!-- <img v-bind:src="showimage.url" v-bind:width="showimage.width" v-bind:height="showimage.height" mode="aspectFit"> -->
+							<img v-bind:src="showimage.url">
+						</div>
+						<div class="image_icon" @click="next()">
+							<img src="../image/右.png">
+						</div>
+					</div>
+					<!-- 图片的详细信息 -->
+					<div class="detail">
+						
+						<div class="detail_colunm" v-for="column in detailBlock">
+							<div v-bind:class="'detailBlock_' + item.attribute" class="detailBlock" v-for="(item,index) in column">
+								<img src="../image/文件夹.png" v-if="item.attribute == 'path'" @click="openFile()">
+								<label>{{item.label}}：</label>		
+								
+								<p v-if="item.attribute != 'tag'">
+								        {{showimage[item.attribute]}}
+								</p>
+								<p v-else-if="item.attribute == 'tag'" v-for="(tag,i) in showimage.tag">{{tag}}</p>
+								
+							</div>
+						</div>
+
+					</div>
+					
+				</div>
+				
+			</div>
+
+		</div>
+
+	</body>
+</html>
+
+<script src="../../api/getImageDir.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../api/functional.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../api/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="./index.js" type="text/javascript" charset="utf-8"></script>
+
+<style type="text/css">
+	@import url("./index.css");
+	@import url("./public.css");
+</style>

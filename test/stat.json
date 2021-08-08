@@ -1,0 +1,27 @@
+{
+	Stats {
+		dev: 4000053689,
+		mode: 33206,
+		nlink: 1,
+		uid: 0,
+		gid: 0
+	}
+	atime: Tue Aug 04 2020 20: 59: 19 GMT + 0800(中国标准时间) {}
+	atimeMs: 1596545959042.567
+	birthtime: Tue Aug 04 2020 20: 59: 19 GMT + 0800(中国标准时间) {}
+	birthtimeMs: 1596545959042.567
+	blksize: 4096
+	blocks: 104
+	ctime: Wed Jul 28 2021 21: 09: 10 GMT + 0800(中国标准时间) {}
+	ctimeMs: 1627477750532.3162
+	dev: 4000053689
+	gid: 0
+	ino: 844424930398309
+	mode: 33206
+	mtime: Mon Jul 20 2020 22: 26: 57 GMT + 0800(中国标准时间) {}
+	mtimeMs: 1595255217905.44
+	nlink: 1
+	rdev: 0
+	size: 49646
+	uid: 0
+}
